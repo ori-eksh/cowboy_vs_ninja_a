@@ -331,7 +331,7 @@ TEST_CASE("full attack")
 
     */
     newTeam1.attack(&newTeam2);
-    CHECK(boy4.getHitPoints() == 78); // 1 C and 2 N try to kill him -> -36 points
+    CHECK(boy4.getHitPoints() == 60); // 1 C and 2 N try to kill him -> -36 points
     CHECK(boy6.getHitPoints() == 120);
     CHECK(boy1.getAmountOfBalls() == 5);
 
@@ -341,10 +341,10 @@ TEST_CASE("full attack")
     }
     CHECK(boy1.getAmountOfBalls() == 0);
     CHECK(boy1.hasBullets() == false);
-    CHECK(boy4.getHitPoints() == 28);
+    CHECK(boy4.getHitPoints() == 10);
 
     newTeam1.attack(&newTeam2);
-    CHECK(boy4.getHitPoints() == 0); // 2 N try to kill him -> -62 points (the cowboy jast Load the gun)
+    CHECK(boy4.getHitPoints() == 0); // 2 N try to kill him -> -80 points (the cowboy jast Load the gun)
     CHECK(boy6.getHitPoints() == 120);
     CHECK(boy1.getAmountOfBalls() == 6);
     CHECK(newTeam2.stillAlive() == 2);
@@ -377,7 +377,7 @@ TEST_CASE("the players get closer")
     newTeam2.attack(&newTeam1);
     CHECK(theKiller1.getLocation().getX() == 10);
     CHECK(theKiller1.getLocation().getY() == 10);
-    CHECK(soldier1.getHitPoints() == 119);
+    CHECK(soldier1.getHitPoints() == 110);
 }
 TEST_CASE("A player tries to kill when he himself is dead /A player tries to kill a dead player")
 {
